@@ -1,9 +1,14 @@
 # Autor: Gastán Tomás Huete
 # Date: 18/09/2022
 
-# variables globales a las que accedera el usuario
-gender = input("Que eres, ¿hombre o mujer?: ")
+# variable that the user can modify
 name = ""
+gender = ""
+# TODO ourHero = HeroClass.Hero
+
+# add the hero in the code
+gender = input("Dime que eres, un hombre o una mujer: ")  # <-- Error that i dont understand XD
+print("Perfecto")
 
 if gender == "hombre".lower():
     name = input("Muy bien, bienvenido... como deberias llamarte viajero? -> ")
