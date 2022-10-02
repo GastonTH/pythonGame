@@ -3,7 +3,7 @@
 
 # variable that the user can modify
 name = ""
-gender = ""
+fightStyle = ""
 # TODO ourHero = HeroClass.Hero
 
 # add the hero in the code
