@@ -92,6 +92,10 @@ while True:
             print("No contemplo esa opcion, prueba otra vez...")
 
 print("Ahora, te asignaremos las estadisticas en funcion a tu eleccion...")
-ourHero.setStats()
-loading_animation()
+#ourHero.setStats()
+#loading_animation()
+time.sleep(1)
+print(" ")
+ourHero.stats_sheet
+
 # ----------------------------------------------------------------------------------------------
