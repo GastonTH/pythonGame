@@ -13,7 +13,7 @@ sys.path.append(parent_dir)
 
 # imports from the game
 from lib.HeroClass import Hero
-from utils.utils import clear_console
+from utils.utils import *
 from data.info_class import *
 import time
 # ----------------------
@@ -23,18 +23,27 @@ ourHero = Hero
 select_character_class = ""
 
 # add the hero in the code
-ourHero.gender = input("Dime que eres, un hombre o una mujer: ")
+
+print("Dime que eres, un hombre o una mujer")
+
+while True:
+    ourHero.gender = input(" -> ").lower()
+     
+    if ourHero.gender == "hombre".lower():
+        ourHero.name = input("Muy bien, bienvenido... como deberias llamarte viajero? -> ")
+        break
+    elif ourHero.gender == "mujer".lower():
+        ourHero.name = input("Muy bien, bienvenida... como deberias llamarte viajera? -> ")
+        break
+    else:
+        print("No entiendo, intentalo de nuevo")
+
 print("Perfecto")
+time.sleep(1)
 
-if ourHero.gender == "hombre".lower():
-    ourHero.name = input("Muy bien, bienvenido... como deberias llamarte viajero? -> ")
-
-if ourHero.gender == "mujer".lower():
-    ourHero.name = input("Muy bien, bienvenida... como deberias llamarte viajera? -> ")
-
-# nombre ya inputeado
+# whit params
 print("Muy bien " + ourHero.name + ", seras el ", end="")
-print("novato", end="") if ourHero.gender == "hombre".lower() else print("novata", end="")
+print("novato", end="") if ourHero.gender == "hombre" else print("novata", end="")
 print(" de esta leyenda.")
 
 print("Ahora decidiras tu estilo de combate.")
@@ -50,23 +59,39 @@ time.sleep(1)
 print("Y por ultimo, pero no menos importante.")
 rogue_info()
 time.sleep(1)
-print("Y bien...", end="") 
+print("Y bien... que decides") 
 time.sleep(0.5)
-select_character_class = input(" que decides")
 
 while True:
+        select_character_class = input(" -> ")
         if select_character_class.lower() == "guerrero" or select_character_class.lower() == "guerrera":
-            print("Perfecto, seras")
+            if ourHero.gender == "hombre":
+                print("Perfecto, seras un guerrero")
+            else:
+                print("Perfecto, seras una guerrera")
             break
         elif select_character_class.lower() == "arquero" or select_character_class.lower() == "arquera":
-            print()
+            if ourHero.gender == "hombre":
+                print("Perfecto, seras un arquero")
+            else:
+                print("Perfecto, seras una arquera")
             break
         elif select_character_class.lower() == "asesino" or select_character_class.lower() == "asesina":
-            print()
+            if ourHero.gender == "hombre":
+                print("Perfecto, seras un asesino")
+            else:
+                print("Perfecto, seras una asesina")
             break
         elif select_character_class.lower() == "mago" or select_character_class.lower() == "maga":
-            print()
+            if ourHero.gender == "hombre":
+                print("Perfecto, seras un mago")
+            else:
+                print("Perfecto, seras una maga")
             break
         else:
             print("No contemplo esa opcion, prueba otra vez...")
+
+print("Ahora, te asignaremos las estadisticas en funcion a tu eleccion...")
+ourHero.setStats()
+loading_animation()
 # ----------------------------------------------------------------------------------------------
